@@ -5,6 +5,7 @@ import {
   AskYourself,
   ChapterActions,
   Culture,
+  Day3Teaser,
   Habits,
   KeyMessage,
   NearMiss,
@@ -50,6 +51,7 @@ function Index() {
       <SiteHeader />
       <main>
         <ScrollScrub className="sw-journey" scenes={journeyScenes} theme={scrollScrubTheme} />
+        <Day3Teaser />
         <Welcome />
         <Why />
         <Culture />

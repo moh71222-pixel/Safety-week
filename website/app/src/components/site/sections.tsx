@@ -44,11 +44,11 @@ function SectionHead({ id, index, title, lead }: { id: string; index: string; ti
 /* ---------- Header ---------- */
 
 const NAV = [
-  { href: "#why", label: "Why" },
-  { href: "#habits", label: "Habits" },
-  { href: "#take-5", label: "Take 5" },
-  { href: "#stop-work", label: "Stop work" },
-  { href: "#week", label: "The week" },
+  { href: "/#why", label: "Why" },
+  { href: "/#habits", label: "Habits" },
+  { href: "/#take-5", label: "Take 5" },
+  { href: "/day-3", label: "Day 3" },
+  { href: "/#week", label: "The week" },
 ];
 
 export function SiteHeader() {
@@ -62,7 +62,7 @@ export function SiteHeader() {
 
   return (
     <header className="sw-nav" data-scrolled={scrolled ? "true" : "false"}>
-      <a className="sw-nav__brand" href="#top" aria-label="AtkinsRéalis Safety Week 2026, back to top">
+      <a className="sw-nav__brand" href="/" aria-label="AtkinsRéalis Safety Week 2026, home">
         <img src="/assets/brand/logo-white.png" alt="AtkinsRéalis" width={694} height={99} />
         <span className="sw-nav__event">Safety Week 2026</span>
       </a>
@@ -73,7 +73,7 @@ export function SiteHeader() {
           </a>
         ))}
       </nav>
-      <a className="sw-nav__pledge" href="#pledge">
+      <a className="sw-nav__pledge" href="/#pledge">
         Make your pledge <span aria-hidden="true">→</span>
       </a>
     </header>
@@ -83,10 +83,10 @@ export function SiteHeader() {
 export function ChapterActions() {
   return (
     <div className="sw-chapter-cta">
-      <a className="sw-chapter-cta__primary" href="#pledge">
+      <a className="sw-chapter-cta__primary" href="/#pledge">
         Sign the pledge wall <span aria-hidden="true">→</span>
       </a>
-      <a className="sw-chapter-cta__ghost" href="#week">
+      <a className="sw-chapter-cta__ghost" href="/#week">
         See the week
       </a>
     </div>
@@ -141,6 +141,28 @@ export function Welcome() {
         <img src="/assets/brand/crew.png" alt="Two colleagues in magenta hard hats and high visibility vests on site" width={1308} height={718} />
         <img className="sw-welcome__badge" src="/assets/brand/badge.png" alt="Why I Work Safely campaign badge" width={1255} height={637} />
       </figure>
+    </section>
+  );
+}
+
+/* ---------- Day 3 teaser ---------- */
+
+export function Day3Teaser() {
+  return (
+    <section className="sw-teaser" aria-labelledby="teaser-title">
+      <a href="/day-3" className="sw-teaser__card">
+        <span className="sw-teaser__day" aria-hidden="true">
+          <small>Day</small>03
+        </span>
+        <span className="sw-teaser__copy">
+          <span className="sw-teaser__when">Tuesday 6 October · Now on the site</span>
+          <span className="sw-teaser__title" id="teaser-title">
+            Situational Awareness &amp; Personal Safety
+          </span>
+          <span className="sw-teaser__sub">Stay Alert, Stay Safe. Emergency numbers, levels of alertness and the Awareness Challenge.</span>
+        </span>
+        <span className="sw-teaser__go" aria-hidden="true">→</span>
+      </a>
     </section>
   );
 }
@@ -515,10 +537,10 @@ export function AskYourself() {
 
 /* ---------- Week ---------- */
 
-const WEEK = [
-  { day: 1, date: "2026-10-04", short: "Sun 4 Oct", title: "How I Work Safely", sub: "Campaign launch" },
+const WEEK: { day: number; date: string; short: string; title: string; sub: string; href?: string }[] = [
+  { day: 1, date: "2026-10-04", short: "Sun 4 Oct", title: "How I Work Safely", sub: "Campaign launch", href: "/" },
   { day: 2, date: "2026-10-05", short: "Mon 5 Oct", title: "Safety on the Riyadh Metro Network", sub: "Safe Metro Travel Awareness" },
-  { day: 3, date: "2026-10-06", short: "Tue 6 Oct", title: "Situational Awareness & Personal Safety", sub: "Stay Alert, Stay Safe" },
+  { day: 3, date: "2026-10-06", short: "Tue 6 Oct", title: "Situational Awareness & Personal Safety", sub: "Stay Alert, Stay Safe", href: "/day-3" },
   { day: 4, date: "2026-10-07", short: "Wed 7 Oct", title: "Health, Wellbeing & Mental Safety", sub: "Looking After Yourself to Work Safely" },
   { day: 5, date: "2026-10-08", short: "Thu 8 Oct", title: "Safety Leadership & Recognition", sub: "Closing ceremony & team lunch" },
 ];
@@ -545,6 +567,11 @@ export function Week() {
               <h3>{d.title}</h3>
               <p className="sw-week__sub">{d.sub}</p>
               <time dateTime={d.date}>{d.short}</time>
+              {d.href ? (
+                <a className="sw-week__open" href={d.href}>
+                  Open Day 0{d.day} <span aria-hidden="true">→</span>
+                </a>
+              ) : null}
             </li>
           );
         })}

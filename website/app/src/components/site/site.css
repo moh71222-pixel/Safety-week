@@ -1560,6 +1560,119 @@
   }
 }
 
+.sw-week__open {
+  margin-top: 6px;
+  justify-self: start;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--magenta);
+  text-decoration: none;
+  border-bottom: 2px solid currentColor;
+}
+
+.sw-week__open span {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.sw-week__open:hover span {
+  transform: translateX(4px);
+}
+
+/* ---------- Day 3 teaser ---------- */
+
+.sw-teaser {
+  background: var(--navy-deep);
+  padding: 28px var(--gutter);
+}
+
+.sw-teaser__card {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: clamp(18px, 3vw, 36px);
+  padding: 22px clamp(20px, 3vw, 36px);
+  border-radius: 28px;
+  background: var(--magenta);
+  color: var(--white);
+  text-decoration: none;
+  box-shadow: 0 0 0 8px color-mix(in srgb, var(--magenta) 25%, transparent);
+  transition: transform 0.25s ease;
+}
+
+.sw-teaser__card:hover {
+  transform: translateY(-3px);
+}
+
+.sw-teaser__day {
+  display: grid;
+  justify-items: center;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(44px, 6vw, 72px);
+  line-height: 0.9;
+}
+
+.sw-teaser__day small {
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.sw-teaser__copy {
+  display: grid;
+  gap: 6px;
+}
+
+.sw-teaser__when {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--lime);
+}
+
+.sw-teaser__title {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(22px, 3vw, 36px);
+  line-height: 1.05;
+}
+
+.sw-teaser__sub {
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+.sw-teaser__go {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--lime);
+  color: var(--navy-deep);
+  font-size: 24px;
+  font-weight: 700;
+  transition: transform 0.25s ease;
+}
+
+.sw-teaser__card:hover .sw-teaser__go {
+  transform: translateX(6px);
+}
+
+@media (max-width: 560px) {
+  .sw-teaser__card {
+    grid-template-columns: auto 1fr;
+  }
+  .sw-teaser__go {
+    display: none;
+  }
+}
+
 /* ---------- Key message ---------- */
 
 .sw-key {

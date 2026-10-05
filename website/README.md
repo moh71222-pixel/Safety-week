@@ -22,11 +22,29 @@ The site's master copy lives in the Higgsfield website repo. This folder is a sn
 11. **The week.** The five-day programme, with today highlighted automatically in Riyadh time.
 12. **Key message and footer.** AtkinsRéalis logo and the six Riyadh Metro line trains.
 
+## Day 3 page (`/day-3`)
+
+Situational Awareness & Personal Safety, Tuesday 6 October: "Stay Alert, Stay Safe". The content comes from the Day 3 deck video:
+
+- What situational awareness is, why it matters, and how it applies inside and outside work.
+- The awareness cycle (Perceive, Understand, Anticipate, Act) as an interactive wheel.
+- Levels of alertness (White, Yellow, Orange, Red) as an interactive selector. Aim for Yellow.
+- What weakens awareness: six factors.
+- Staying informed in uncertain times.
+- Emergency numbers 911, 997, 998 and 999, each tap-to-call on phones.
+- Personal safety on the move.
+- Look after each other: Notice. Ask. Support.
+- The Awareness Challenge, a three-question self-check with a score.
+- Key message, and a "coming up" card for Day 4.
+
+The home page links to Day 3 from the nav, a teaser band under the film, and the week timeline.
+
 ## Layout
 
 | Path | Contents |
 |---|---|
 | `app/src/routes/index.tsx` | Page composition and the pledge loader |
+| `app/src/routes/day-3.tsx` + `app/src/components/site/day3.*` | Day 3 page |
 | `app/src/components/site/` | Section components and stylesheet |
 | `app/src/scroll-scrub-scenes.ts` | Film chapters and theme |
 | `app/src/lib/api/pledges.functions.ts` | Pledge wall server functions |
