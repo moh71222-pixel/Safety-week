@@ -36,6 +36,15 @@
   margin: 0;
 }
 
+.sw-site h1,
+.sw-site h2 {
+  font-weight: 700;
+}
+
+.sw-site h3 {
+  font-weight: 600;
+}
+
 .sw-site p {
   margin: 0;
 }
@@ -133,7 +142,7 @@
 .sw-nav__links a {
   color: var(--white);
   text-decoration: none;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   position: relative;
   padding: 6px 0;
@@ -223,8 +232,17 @@
   z-index: 1;
   pointer-events: none;
   background:
-    linear-gradient(90deg, color-mix(in srgb, var(--navy-deep) 72%, transparent) 0%, transparent 58%),
-    linear-gradient(0deg, color-mix(in srgb, var(--navy-deep) 55%, transparent) 0%, transparent 35%);
+    linear-gradient(90deg, color-mix(in srgb, var(--navy-deep) 80%, transparent) 0%, color-mix(in srgb, var(--navy-deep) 25%, transparent) 50%, color-mix(in srgb, var(--navy-deep) 70%, transparent) 100%),
+    linear-gradient(0deg, color-mix(in srgb, var(--navy-deep) 60%, transparent) 0%, transparent 40%),
+    linear-gradient(180deg, color-mix(in srgb, var(--navy-deep) 55%, transparent) 0%, transparent 22%);
+}
+
+.sw-journey .scroll-scrub__copy {
+  text-shadow: 0 2px 24px color-mix(in srgb, var(--navy-deep) 70%, transparent);
+}
+
+.sw-journey .scroll-scrub__route {
+  top: 88px;
 }
 
 .sw-journey .scroll-scrub__title {
@@ -1113,9 +1131,10 @@
 
 .sw-pledge__steps li {
   counter-increment: pl;
-  display: grid;
-  grid-template-columns: 40px 1fr;
-  gap: 14px;
+  position: relative;
+  display: block;
+  min-height: 40px;
+  padding: 8px 0 0 56px;
   font-size: 16px;
   line-height: 1.55;
   color: var(--steel);
@@ -1123,6 +1142,9 @@
 
 .sw-pledge__steps li::before {
   content: counter(pl);
+  position: absolute;
+  left: 0;
+  top: 0;
   display: grid;
   place-items: center;
   width: 40px;
